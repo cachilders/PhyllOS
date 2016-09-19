@@ -10,7 +10,6 @@ setInterval(function () {
 
   // SET HTTP request options
   var httpRequestOptions = {
-    // CHANGE this line to API
     url: 'http://localhost:1991/ping',
     form: {
       sensorData: Math.random() * 10
