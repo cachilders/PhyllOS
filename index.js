@@ -1,13 +1,25 @@
-// Import the interface to Tessel hardware
-var tessel = require('tessel');
+////////    NODE MODULES    ////////
+// var tessel  = require('tessel');
+var request = require('request');
+var app     = require('./server/server').app;
 
-// Turn one of the LEDs on to start.
-tessel.led[2].on();
 
-// Blink!
+
+// PING server every three seconds
 setInterval(function () {
-  tessel.led[2].toggle();
-  tessel.led[3].toggle();
-}, 100);
 
-console.log("I'm blinking! (Press CTRL + C to stop)");
+  // SET HTTP request options
+  var httpRequestOptions = {
+    url: 'http://localhost:1991/ping',
+    form: {
+      sensorData: Math.random() * 10
+    }
+  };
+
+  request.post(httpRequestOptions, function(error, response, body){
+    console.log(body);
+  })
+}, 3000);
+
+
+module.exports.app = app;
