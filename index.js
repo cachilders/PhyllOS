@@ -35,7 +35,7 @@ setInterval(function () {
   request.post(httpRequestOptions, function(error, response, body){
     console.log(body);
   })
-}, 15000);
+}, 300000);
 
 
 module.exports.app = app;
