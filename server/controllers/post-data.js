@@ -6,15 +6,14 @@ var request = require('request');
 
 var httpRequestOptions = {
   // CHANGE this line to API endpoint
-  url: 'https://ancient-peak-18496.herokuapp.com/pong',
+  url: 'process.env.POST_TO_ADDRESS',
 };
 
 router.post('/', function(req, res){
   httpRequestOptions.sensorData = req.body;
-  console.log('PING');
-  console.log('Sensor Data:', req.body);
+  console.log('Sending ', req.body.status);
   request(httpRequestOptions, function(error, response, body){
-    console.log("body:", body);
+    console.log("response: ", body);
   })
 })
 

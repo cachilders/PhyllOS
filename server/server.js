@@ -4,8 +4,7 @@ var app        = express();
 var bodyParser = require('body-parser')
 
 ///////    SERVER MODULES    ///////
-var ping = require('./controllers/ping');
-var pong = require('./controllers/pong');
+var postData   = require('./controllers/post-data');
 
 
 // MOUNT middlewares
@@ -15,8 +14,7 @@ app.use(bodyParser.urlencoded({
 }));
 
 // MOUNT subapp routes
-app.use('/ping', ping);
-app.use('/pong', pong);
+app.use('/post-data', postData);
 
 app.set('port', 1991);
 app.listen(app.get('port'), function(req, res){
