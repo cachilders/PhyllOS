@@ -12,6 +12,9 @@ require('getmac').getMac(function(err, mac) {
   deviceId = mac;
 });
 
+// TODO: Below should be modularized and called once immediately and again
+// with the interval. Or something. Still not sold on interval as our chron job.
+
 // POST measurements every fifteen seconds
 setInterval(function () {
 
@@ -33,7 +36,7 @@ setInterval(function () {
   };
 
   request.post(httpRequestOptions, function(error, response, body){
-    console.log(body);
+    if (error) console.error(error);
   })
 }, 300000);
 
