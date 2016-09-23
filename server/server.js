@@ -10,7 +10,7 @@ var postData   = require('./controllers/post-data');
 // MOUNT middlewares
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-    extended: true
+  extended: true
 }));
 
 // MOUNT subapp routes
