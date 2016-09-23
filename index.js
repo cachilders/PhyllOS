@@ -74,7 +74,7 @@ board.on("ready", function() {
         deviceOS: null,           // will update
         deviceAlert: false,       // will update
         moisture: moistureSample, // will push to array
-        light: null,              // will push to array
+        light: null               // will push to array
         // ph: null,                 // will push to array
         // humidity: null,           // will push to array
         // temperature: null,        // will push to array
