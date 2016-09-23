@@ -5,16 +5,14 @@ var request = require('request');
 
 
 var httpRequestOptions = {
-  // CHANGE this line to API endpoint
-  url: process.env.POST_TO_ADDRESS,
+  url: 'http://phyll-dev.herokuapp.com/io/record',
   json: true
 };
 
 router.post('/', function(req, res){
   httpRequestOptions.body = {status: req.body};
-  console.log('Sending ', req.body);
   request.post(httpRequestOptions, function(error, response, body){
-    console.log("response: ", body);
+    res.send();
   })
 })
 
