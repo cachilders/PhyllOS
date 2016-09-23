@@ -15,14 +15,10 @@
   "readme": "Server for collection and transmission of data to Phyll O application.",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "dotenv-safe": "^2.3.2",
     "express": "^4.14.0",
     "getmac": "^1.2.1",
     "johnny-five": "^0.10.0",
-    "nan": "^2.4.0",
-    "nodeimu": "^2.1.9",
     "request": "^2.75.0",
-    "sense-hat-matrix": "^0.2.0",
     "tessel-io": "^0.7.2"
   },
   "devDependencies": {
